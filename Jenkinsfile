@@ -44,6 +44,11 @@ pipeline {
                             ./deploy.sh  // Your actual deployment script
                         '''
 
+                        sh '''
+                            echo "Waiting...."
+                            sleep 240
+                        '''
+
                     } catch (Exception e) {
                         echo "Error occurred during deployment: ${e.message}"
                         currentBuild.result = 'FAILURE'  // Mark the build as failed
