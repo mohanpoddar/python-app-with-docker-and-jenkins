@@ -19,11 +19,6 @@ pipeline {
                             docker pull mohanpoddar/jenkins-staging-agent:latest
                         '''
                         
-                        // Wait
-                        sh '''
-                            sleep 30
-                        '''
-
                         // Run the Docker container, execute tests, and remove it afterward
                         sh '''
                             docker run --rm mohanpoddar/jenkins-staging-agent:latest python -m unittest discover -s tests -p "*.py"
