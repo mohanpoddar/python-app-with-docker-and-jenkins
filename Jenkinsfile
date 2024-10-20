@@ -16,12 +16,12 @@ pipeline {
 
                         // Pull the latest image from the registry
                         sh '''
-                            docker pull <your-docker-username>/jenkins-staging-agent:latest
+                            docker pull mohanpoddar/jenkins-staging-agent:latest
                         '''
 
                         // Run the Docker container, execute tests, and remove it afterward
                         sh '''
-                            docker run --rm <your-docker-username>/jenkins-staging-agent:latest python -m unittest discover -s tests -p "*.py"
+                            docker run --rm mohanpoddar/jenkins-staging-agent:latest python -m unittest discover -s tests -p "*.py"
                         '''
                     } catch (Exception e) {
                         echo "Error occurred during testing: ${e.message}"
