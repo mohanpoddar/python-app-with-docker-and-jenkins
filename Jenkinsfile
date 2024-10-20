@@ -18,6 +18,11 @@ pipeline {
                         sh '''
                             docker pull mohanpoddar/jenkins-staging-agent:latest
                         '''
+                        
+                        // Wait
+                        sh '''
+                            sleep 30
+                        '''
 
                         // Run the Docker container, execute tests, and remove it afterward
                         sh '''
