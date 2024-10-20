@@ -45,6 +45,7 @@ pipeline {
                         '''
 
                         sh '''
+                            echo "Waiting...."
                             sleep 240
                         '''
 
