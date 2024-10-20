@@ -11,8 +11,6 @@ trap 'error_handler $LINENO' ERR
 
 echo "Starting deployment..."
 
-sleep 200
-
 # Simulate some deployment steps
 # Uncomment the following line to simulate an error
 # false  # Simulate a failure
